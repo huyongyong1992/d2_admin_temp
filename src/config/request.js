@@ -33,7 +33,6 @@
 
 // // 创建一个 axios 实例
 // const service = axios.create({
-//   baseURL: process.env.VUE_APP_API,
 //   timeout: 5000 // 请求超时时间
 // })
 
@@ -105,6 +104,7 @@
 
 // export default service
 import { Message } from 'element-ui'
+import { BASE_URL } from './env'
 import axios from 'axios'
 axios.defaults.headers.post['Content-Type'] = 'application/json;charset=UTF-8'
 
@@ -121,7 +121,7 @@ export const request = (url = '', data = {}, type = 'get') => {
     headers: {
       'accessToken': accessToken
     },
-    baseURL: process.env.VUE_APP_API,
+    baseURL: BASE_URL,
     timeout: 30000
   })
   if (type === 'get') {

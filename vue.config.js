@@ -54,7 +54,7 @@ module.exports = {
                 // 其它优化选项 https://segmentfault.com/a/1190000010874406
                 compress: {
                   warnings: false,
-                  drop_console: true,
+                  drop_console: process.env.NODE_ENV !== 'pre',
                   drop_debugger: true,
                   pure_funcs: ['console.log']
                 }

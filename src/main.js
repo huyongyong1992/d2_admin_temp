@@ -15,7 +15,7 @@ import { frameInRoutes } from '@/router/routes'
 const asideMenu = JSON.parse(window.sessionStorage.getItem('asideMenu'))
 // 核心插件
 Vue.use(d2Admin)
-
+console.log(process.env.NODE_ENV)
 new Vue({
   router,
   store,
