@@ -6,12 +6,24 @@
 </template>
 
 <script>
+import { AccountLogin } from '@api/sys.login'
 export default {
   name: 'page1',
   data () {
     return {
       filename: __filename
     }
+  },
+  created() {
+    console.log(AccountLogin)
+    AccountLogin({
+      userName: 'xiaohu',
+      password: 'qwer1234'
+    }).then(e => {
+      console.log(e)
+    }).catch(e => {
+      alert(e)
+    })
   }
 }
 </script>
