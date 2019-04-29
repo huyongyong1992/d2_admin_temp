@@ -14,7 +14,7 @@ export default {
       filename: __filename
     }
   },
-  created() {
+  created () {
     console.log(AccountLogin)
     AccountLogin({
       userName: 'xiaohu',

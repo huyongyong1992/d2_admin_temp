@@ -1,11 +1,11 @@
 /*
- * @Author: young.hu 
- * @Date: 2019-04-28 17:55:52 
+ * @Author: young.hu
+ * @Date: 2019-04-28 17:55:52
  * @Last Modified by: young.hu
- * @Last Modified time: 2019-04-28 18:29:01
+ * @Last Modified time: 2019-04-29 09:38:26
  */
 
- /**
+/**
   * 请求BASE_URl, 根据环境变量配置不同的BASE_URL
   * @param { String } BASE_URL
   */

@@ -1,6 +1,6 @@
 import util from '@/libs/util'
 import { cloneDeep } from 'lodash'
-
+import { getStorage } from '@/libs/auth'
 /**
  * @description 检查路径是否存在 不存在的话初始化
  * @param {Object} param dbName {String} 数据库名称
@@ -17,8 +17,8 @@ function pathInit ({
   validator = () => true,
   defaultValue = ''
 }) {
-  const uuid = util.cookies.get('uuid') || 'ghost-uuid'
-  const currentPath = `${dbName}.${user ? `user.${uuid}` : 'public'}${path ? `.${path}` : ''}`
+  const userId = getStorage('userId') || 'ghost-userId'
+  const currentPath = `${dbName}.${user ? `user.${userId}` : 'public'}${path ? `.${path}` : ''}`
   const value = util.db.get(currentPath).value()
   // console.group('pathInit')
   // console.log('dbName', dbName)

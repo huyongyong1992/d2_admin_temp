@@ -1,6 +1,5 @@
-import util from '@/libs/util.js'
 import { AccountLogin } from '@api/sys.login'
-
+import { setStorage, removeStorage } from '@/libs/auth'
 export default {
   namespaced: true,
   actions: {
@@ -24,13 +23,12 @@ export default {
           password
         })
           .then(async res => {
-            // 设置 cookie 一定要存 uuid 和 token 两个 cookie
+            // 设置 localStorage 一定要存 userId 和 accessToken 两个 值
             // 整个系统依赖这两个数据进行校验和存储
-            // uuid 是用户身份唯一标识 用户注册的时候确定 并且不可改变 不可重复
-            // token 代表用户当前登录状态 建议在网络请求中携带 token
-            // 如有必要 token 需要定时更新，默认保存一天
-            util.cookies.set('uuid', res.uuid)
-            util.cookies.set('token', res.token)
+            // userId 是用户身份唯一标识 用户注册的时候确定 并且不可改变 不可重复
+            // accessToken 代表用户当前登录状态 在网络请求header中携带 accessToken
+            setStorage('userId', res.userId)
+            setStorage('accessToken', res.token)
             // 设置 vuex 用户信息
             await dispatch('d2admin/user/set', {
               name: res.name
@@ -57,9 +55,9 @@ export default {
        * @description 注销
        */
       async function logout () {
-        // 删除cookie
-        util.cookies.remove('token')
-        util.cookies.remove('uuid')
+        // 删除localStorage
+        removeStorage('accessToken')
+        removeStorage('userId')
         // 清空 vuex 用户信息
         await dispatch('d2admin/user/set', {}, { root: true })
         // 跳转路由
