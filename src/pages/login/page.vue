@@ -61,16 +61,16 @@
             </el-button> -->
           </div>
         </div>
-        <!-- <div class="page-login--content-footer">
-          <p class="page-login--content-footer-options">
+        <div class="page-login--content-footer">
+          <!-- <p class="page-login--content-footer-options">
             <a href="#">帮助</a>
             <a href="#">隐私</a>
             <a href="#">条款</a>
-          </p>
-          <p class="page-login--content-footer-copyright">
+          </p> -->
+          <!-- <p class="page-login--content-footer-copyright">
             Copyright <d2-icon name="copyright"/> 2018 D2 Projects 开源组织出品 <a href="https://github.com/FairyEver">@FairyEver</a>
-          </p>
-        </div> -->
+          </p> -->
+        </div>
       </div>
     </div>
     <el-dialog
