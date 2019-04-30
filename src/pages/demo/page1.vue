@@ -9,12 +9,12 @@
 import { AccountLogin } from '@api/sys.login'
 export default {
   name: 'page1',
-  data () {
+  data() {
     return {
       filename: __filename
     }
   },
-  created () {
+  created() {
     console.log(AccountLogin)
     AccountLogin({
       userName: 'xiaohu',

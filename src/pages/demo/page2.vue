@@ -8,7 +8,7 @@
 <script>
 export default {
   name: 'page2',
-  data () {
+  data() {
     return {
       filename: __filename
     }

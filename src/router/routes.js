@@ -26,7 +26,7 @@ const frameIn = [
         name: 'refresh',
         hidden: true,
         component: {
-          beforeRouteEnter (to, from, next) {
+          beforeRouteEnter(to, from, next) {
             next(vm => vm.$router.replace(from.fullPath))
           },
           render: h => h()
@@ -38,7 +38,7 @@ const frameIn = [
         name: 'redirect',
         hidden: true,
         component: {
-          beforeRouteEnter (to, from, next) {
+          beforeRouteEnter(to, from, next) {
             next(vm => vm.$router.replace(JSON.parse(from.params.route)))
           },
           render: h => h()
@@ -69,7 +69,7 @@ const errorPage = [
   {
     path: '*',
     name: '404',
-    component: () => import('@/pages/error-page-404')
+    component: () => import('@/pages/error-page/404')
   }
 ]
 
